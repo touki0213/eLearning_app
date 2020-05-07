@@ -54,7 +54,15 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
+                                <a class="nav-link" href="{{ route('home') }}">
+                                    <img src="https://image.flaticon.com/icons/png/512/69/69524.png"
+                                    style="width: 40px;" alt="">
+                                </a>
+
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('profile.edit') }}">
+                                        Setting
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,27 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = auth()->user();
+
+        return view('home', compact('user'));
+    }
+
+    public function edit()
+    {
+        $user = auth()->user();
+
+        return view('profile', compact('user'));
+    }
+
+    public function update(Request $request)
+    {
+        $user = auth()->user();
+
+        $user->update([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+        ]);
+        return redirect()->route('home');
     }
 }
