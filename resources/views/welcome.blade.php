@@ -80,18 +80,12 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div class="welcome">
+                    <h1 style="color:saddlebrown">welcome</h1>
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="image">
+                    <img src="https://pics.prcm.jp/ed5046ef56312/80780019/png/80780019_220x220.png"
+                    style="width: 300px;" alt="">
                 </div>
             </div>
         </div>
