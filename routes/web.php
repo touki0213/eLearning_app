@@ -18,3 +18,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profile/edit', 'HomeController@edit')->name('profile.edit');
+Route::post('/profile/update', 'HomeController@update')->name('profile.update');
+
+Route::get('/user_list', 'UserController@list')->name('list');
+Route::get('/show/{id}', 'UserController@show')->name('show');
+
+Route::get('/user_list/{id}/following', 'UserController@following')->name('users.following');
+Route::get('/user_list/{id}/followers', 'UserController@followers')->name('users.followers');
+Route::get('/user_list/{id}/follow','UserController@follow')->name('users.follow');
+Route::get('/user_list/{id}/unfollow', 'UserController@unfollow')->name('users.unfollow');
