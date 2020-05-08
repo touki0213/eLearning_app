@@ -27,6 +27,7 @@ class HomeController extends Controller
         $user = auth()->user();
         $following = $user->following()->get();
         $followers = $user->followers()->get();
+
         return view('home', compact('user', 'following', 'followers'));
     }
 
@@ -46,6 +47,7 @@ class HomeController extends Controller
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
         ]);
+        
         return redirect()->route('home');
     }
 }

@@ -14,6 +14,7 @@ class UserController extends Controller
     public function list()
     {
         $users = User::all();
+
         return view('user.user_list', compact('users'));
     }
 
@@ -22,6 +23,7 @@ class UserController extends Controller
         $user = User::find($id);
         $following = $user->following()->get();
         $followers = $user->followers()->get();
+
         return view('user.show', compact('user', 'following', 'followers'));
     }
 
