@@ -14,13 +14,13 @@
                         <div class="row" style="text-align:center">
                             <div class="col-sm-5 col-md-5 col-lg-5" style="margin: auto;">
                                 <h5>
-                                    <a href="">?</a>
+                                    <a href="{{ route('users.following', ['id' => $user->id]) }}">{{ $following->count() }}</a>
                                 </h5>
                                 <h4>Following</h4>
                             </div>
                             <div class="col-sm-5 col-md-5 col-lg-5" style="margin: auto;">
                                 <h5>
-                                    <a href="">?</a>
+                                    <a href="{{ route('users.followers', ['id' => $user->id]) }}">{{ $followers->count() }}</a>
                                 </h5>
                                 <h4>Followers</h4>
                             </div>

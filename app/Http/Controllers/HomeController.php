@@ -25,8 +25,9 @@ class HomeController extends Controller
     public function index()
     {
         $user = auth()->user();
-
-        return view('home', compact('user'));
+        $following = $user->following()->get();
+        $followers = $user->followers()->get();
+        return view('home', compact('user', 'following', 'followers'));
     }
 
     public function edit()
