@@ -27,18 +27,29 @@ class CategoryController extends Controller
         return redirect()->route('admin.add_create', [$category]);
     }
 
-    public function category_edit()
+    public function category_edit($id)
     {
+        $category = Category::find($id);
 
+        return view('only_admin.category_edit', compact('category'));
     }
 
-    public function category_update()
+    public function category_update(Request $request, $id)
     {
+        $category = Category::find($id);
+        $category->update([
+            'title' => $request->title,
+            'description' => $request->description
+        ]);
 
+        return redirect()->route('admin.categories');
     }
 
-    public function category_destroy()
+    public function category_destroy($id)
     {
+        $category = Category::find($id);
+        $category->delete();
 
+        return redirect()->route('admin.categories');
     }
 }
