@@ -12,13 +12,11 @@ class Question extends Model
 
     public function category()
     {
-        // return $this->hasMany('App\Question', 'categories', 'id');
         return $this->belongsTo('App\Category');
     }
 
     public function choices()
     {
-        // return $this->belongsTo('App\Question');
         return $this->hasMany('App\Choice');
     }
 }
