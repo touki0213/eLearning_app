@@ -23,9 +23,11 @@
                                     <a href="{{ route('admin.category_edit', ['id' => $category->id]) }}">
                                         <button type="button" class="btn btn-success">E</button>
                                     </a>
-                                    <a href="">
-                                        <button type="button" class="btn btn-danger">D</button>
-                                    </a>
+                                    <form action="{{ route('admin.category_delete', ['id' => $category->id]) }}" method="post" style="float: right; margin: 0 3px;">
+                                        {{ csrf_field() }}
+                                        {{ method_field('delete') }}
+                                        <button type="submit" class="btn btn-danger">D</button>
+                                    </form>
                                 </div>
                                 <h5>{{ $category->title }}</h5>
                                 <p>{{ $category->description }}</p>
