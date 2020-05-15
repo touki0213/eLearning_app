@@ -20,7 +20,7 @@
                                     <a href="{{ route('admin.questions', ['id' => $category->id]) }}">
                                         <button type="button" class="btn btn-primary">Q</button>
                                     </a>
-                                    <a href="">
+                                    <a href="{{ route('admin.category_edit', ['id' => $category->id]) }}">
                                         <button type="button" class="btn btn-success">E</button>
                                     </a>
                                     <a href="">

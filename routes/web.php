@@ -32,6 +32,8 @@ Route::get('/user_list/{id}/unfollow', 'UserController@unfollow')->name('users.u
 Route::get('/admin/categories', 'AdminController@admin')->name('admin.categories');
 Route::get('/admin/category_create', 'CategoryController@category_create')->name('admin.category_create');
 Route::post('/admin/category_store', 'CategoryController@category_store')->name('admin.category_store');
+Route::get('/admin/{id}/category_edit', 'CategoryController@category_edit')->name('admin.category_edit');
+Route::post('/admin/{id}/category_update', 'CategoryController@category_update')->name('admin.category_update');
 Route::get('/admin/{id}/questions', 'QuestionController@admin')->name('admin.questions');
 Route::get('/admin/{id}/add_create', 'QuestionController@add_create')->name('admin.add_create');
 Route::post('/admin/{id}/add_store', 'QuestionController@add_store')->name('admin.add_store');
