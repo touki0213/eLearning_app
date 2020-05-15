@@ -12,6 +12,35 @@ class QuestionController extends Controller
 {
     //
 
+    public function admin($id)
+    {
+        $category = Category::find($id);
+        // $questions = Question::where('category_id', $id)->get();
+        // $choices = Choice::where('question_id', $questions->id)->get();
+        $questions = $category->question()->get();
+        // $choices = $questions->choices()->get();
+        // foreach($questions as $question){
+        //     $choices = $question->choices()->get();
+        // }
+        // foreach(Category::find($id)->question() as $question){
+        //     $choices = $question->choices()->get();
+        // }
+        // $choices = Choice::where('question_id', $id)->get();
+        // $choices = Choice::find('question_id')->get();
+        // $choices = Choice::first();
+        // $choices = Question::all();
+        // $choices->choices()->get();
+        // $choices = Choice::with('question_id')->get();
+        // $choices = $questions->choices->first();
+        // $choices = DB::tabel('choices')->where('question_id', $id)->get();
+        // $choices = DB::tabel('questions')->where('id', $id)->get();
+        // $choices = $questions->choices()->where('question_id', $id)->first();
+        // $choices = Question::with('id')->get();
+        
+        
+        return view('only_admin.admin_questions', compact('category', 'questions', 'choices'));
+    }
+
     public function add_create($id)
     {
         $category = Category::find($id);
@@ -63,7 +92,7 @@ class QuestionController extends Controller
 
         $category = Category::find($id);
 
-        return redirect()->route('admin.categories', [$category]);
+        return redirect()->route('admin.questions', [$category]);
     }
 
     public function add_edit()

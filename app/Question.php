@@ -16,9 +16,9 @@ class Question extends Model
         return $this->belongsTo('App\Category');
     }
 
-    public function choice()
+    public function choices()
     {
-        return $this->belongsTo('App\Question');
-        // return $this->hasMany('App\Choice');
+        // return $this->belongsTo('App\Question');
+        return $this->hasMany('App\Choice');
     }
 }
