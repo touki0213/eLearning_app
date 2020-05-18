@@ -34,7 +34,7 @@
                     </td>
                 @endforeach
                 <td>
-                    <a href="">
+                    <a href="{{ route('admin.add_edit', ['id' => $question->id]) }}">
                         <button type="button" class="btn btn-success">E</button>
                     </a>
                     <a href="">
