@@ -77,7 +77,7 @@ class QuestionController extends Controller
 
     public function add_edit()
     {
-
+        
     }
 
     public function add_update()
