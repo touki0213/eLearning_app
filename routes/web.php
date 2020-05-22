@@ -38,4 +38,5 @@ Route::delete('admin/{id}/categories', 'CategoryController@category_destroy')->n
 Route::get('/admin/{id}/questions', 'QuestionController@admin')->name('admin.questions');
 Route::get('/admin/{id}/add_create', 'QuestionController@add_create')->name('admin.add_create');
 Route::post('/admin/{id}/add_store', 'QuestionController@add_store')->name('admin.add_store');
-Route::get('admin/{id}/add_edit', 'QuestionController@add_edit')->name('admin.add_edit');
+Route::get('/admin/{id}/add_edit', 'QuestionController@add_edit')->name('admin.add_edit');
+Route::post('/admin/{id}/add_update', 'QuestionController@add_update')->name('admin.add_update');
