@@ -40,3 +40,4 @@ Route::get('/admin/{id}/add_create', 'QuestionController@add_create')->name('adm
 Route::post('/admin/{id}/add_store', 'QuestionController@add_store')->name('admin.add_store');
 Route::get('/admin/{id}/add_edit', 'QuestionController@add_edit')->name('admin.add_edit');
 Route::post('/admin/{id}/add_update', 'QuestionController@add_update')->name('admin.add_update');
+Route::delete('/admin/{id}/questions', 'QuestionController@add_destroy')->name('admin.add_delete');
