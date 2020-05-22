@@ -41,3 +41,9 @@ Route::post('/admin/{id}/add_store', 'QuestionController@add_store')->name('admi
 Route::get('/admin/{id}/add_edit', 'QuestionController@add_edit')->name('admin.add_edit');
 Route::post('/admin/{id}/add_update', 'QuestionController@add_update')->name('admin.add_update');
 Route::delete('/admin/{id}/questions', 'QuestionController@add_destroy')->name('admin.add_delete');
+
+Route::get('/lesson/categories', 'LessonController@categories')->name('lesson.categories');
+Route::get('/lesson/{id}/questions/{count}', 'LessonController@lesson')->name('lesson');
+Route::get('/lesson/{id}/questions/{lesson}/{count}/answer', 'LessonController@questions')->name('lesson.questions');
+Route::get('/lesson/{id}/questions/{lesson}/{count}/answer/{choice}', 'LessonController@answer')->name('lesson.answer');
+Route::get('/lesson/{id}/result', 'LessonController@result')->name('lesson.result');
