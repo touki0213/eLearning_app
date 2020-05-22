@@ -37,9 +37,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function lesson()
+    public function categories()
     {
-        return $this->belongsToMany('App\User', 'lessons', 'user_id');
+        return $this->belongsToMany('App\Category', 'lessons', 'user_id', 'category_id');
     }
 
     //Users that current user is following

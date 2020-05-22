@@ -10,9 +10,9 @@ class Category extends Model
 
     protected $fillable = ['title', 'description'];
 
-    public function lesson()
+    public function users()
     {
-        return $this->belongsToMany('App\Category', 'lessons', 'category_id');
+        return $this->belongsToMany('App\User', 'lessons', 'category_id', 'user_id');
     }
 
     public function question()

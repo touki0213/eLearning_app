@@ -37,7 +37,7 @@
                     <h4>What do you do?</h4> <hr>
                     <div class="row">
                         <div class="col-md-5" style="margin: 15px auto; text-align: center;">
-                            <a href="" style="text-align: center;">
+                            <a href="{{ route('lesson.categories') }}" style="text-align: center;">
                                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTLiw9lVyqQdn4cY9Zeux7K0MbxzD2Upio_IOGawlr6OfT5y0BL&usqp=CAU"
                                 style="width: 80px; text-align:center;" alt="">
                                 <h5>Category</h5>

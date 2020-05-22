@@ -9,15 +9,10 @@ class Lesson extends Model
 {
     //
 
-    protected $fillable = ['completed'];
+    protected $fillable = ['category_id', 'user_id', 'completed'];
 
-    public function user()
+    public function choices()
     {
-        return $this->hasMany('App\Lesson', 'users', 'id');
-    }
-
-    public function cotegory()
-    {
-        return $this->hasMany('App\Lesson', 'categories', 'id');
+        return $this->belongsToMany('App\Choice', 'answers', 'lesson_id', 'choice_id');
     }
 }
