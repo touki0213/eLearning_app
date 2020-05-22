@@ -34,12 +34,14 @@
                     </td>
                 @endforeach
                 <td>
-                    <a href="{{ route('admin.add_edit', ['id' => $question->id]) }}">
+                    <a href="{{ route('admin.add_edit', ['id' => $question->id]) }}" style="float: left; margin-right: 3px;">
                         <button type="button" class="btn btn-success">E</button>
                     </a>
-                    <a href="">
-                        <button type="button" class="btn btn-danger">D</button>
-                    </a>
+                    <form action="{{ route('admin.add_delete', ['id' => $question->id]) }}" method="post">
+                        {{ csrf_field() }}
+                        {{ method_field('delete') }}
+                        <button type="submit" class="btn btn-danger">D</button>
+                    </form>
                 </td>
             </tr>
             @endforeach

@@ -116,8 +116,11 @@ class QuestionController extends Controller
         return redirect()->route('admin.questions', ['id' => $question->category->id]);
     }
 
-    public function add_destroy()
+    public function add_destroy($id)
     {
+        $question = Question::find($id);
+        $question->delete();
 
+        return redirect()->back();
     }
 }
