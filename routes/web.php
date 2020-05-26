@@ -46,4 +46,7 @@ Route::get('/lesson/categories', 'LessonController@categories')->name('lesson.ca
 Route::get('/lesson/{id}/questions/{count}', 'LessonController@lesson')->name('lesson');
 Route::get('/lesson/{id}/questions/{lesson}/{count}/answer', 'LessonController@questions')->name('lesson.questions');
 Route::get('/lesson/{id}/questions/{lesson}/{count}/answer/{choice}', 'LessonController@answer')->name('lesson.answer');
-Route::get('/lesson/{id}/result', 'LessonController@result')->name('lesson.result');
+Route::get('/lesson/{id}/questions/{lesson}/result', 'LessonController@result')->name('lesson.result');
+
+Route::get('/dashboard', 'DashboardController@activity')->name('activity');
+Route::get('/dashboard/{id}/store/{lesson}', 'DashboardController@activiry_store')->name('activity.store');

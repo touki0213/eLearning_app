@@ -15,4 +15,9 @@ class Lesson extends Model
     {
         return $this->belongsToMany('App\Choice', 'answers', 'lesson_id', 'choice_id');
     }
+
+    public function answers()
+    {
+        return $this->hasMany('App\Answer');
+    }
 }
