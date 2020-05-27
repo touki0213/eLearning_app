@@ -53,7 +53,7 @@
                         </div>
 
                         <div class="col-md-5" style="margin: 15px auto; text-align: center;">
-                            <a href="" style="text-align: center;">
+                            <a href="{{ route('activity') }}" style="text-align: center;">
                                 <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/social-activity-6-841668.png"
                                 style="width: 80px; text-align:center;" alt="">
                                 <h5>Activity</h5>

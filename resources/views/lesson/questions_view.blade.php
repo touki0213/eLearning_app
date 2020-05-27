@@ -7,7 +7,7 @@
                 <div class="row" style="text-align: center;">
                     <div class="col-sm-12 col-md-12 col-lg-12">
                         <h2>Q, {{ $question->text }}</h2>
-                        <h5>{{ $count+1 }} / {{ $question_count }}</h5><br>
+                        <h5>{{ $count+1 }} / {{ count($category->question()->get()) }}</h5><br>
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-12">
                         @foreach($question->choices()->get() as $choice)

@@ -38,9 +38,8 @@ class LessonController extends Controller
         $category = Category::find($id);
         $question = $category->question()->get()[$count];
         $lesson = Lesson::find($lesson);
-        $question_count = $question->count();
 
-        return view('lesson.questions_view', compact('category', 'question', 'lesson', 'count', 'question_count'));
+        return view('lesson.questions_view', compact('category', 'question', 'lesson', 'count'));
     }
 
     public function answer($id, $lesson, $count, $choice)
@@ -48,7 +47,7 @@ class LessonController extends Controller
         $category = Category::find($id);
         $choice = Choice::find($choice);
         $lesson = Lesson::find($lesson);
-        Answer::create([
+        $answer = Answer::create([
             'choice_id' => $choice->id,
             'lesson_id' => $lesson->id
         ]);
@@ -60,14 +59,22 @@ class LessonController extends Controller
             $lesson->completed = 1;
             $lesson->save();
 
-            return redirect()->route('lesson.result', [$category]);
+            return redirect()->route('lesson.result', [$category, $lesson]);
         }
         
         return redirect()->route('lesson.questions', [$category, $lesson, $count, $choice]);
     }
 
-    public function result()
+    public function result($id, $lesson)
     {
-        return view('lesson.result');
+        $lessons = Lesson::find($lesson);
+        $correct = 0;
+        foreach($lessons->answers as $answer) {
+            if ($answer->isCorrect()) {
+                $correct++;
+            }
+        }
+        
+        return view('lesson.result', compact('lessons', 'correct'));
     }
 }
