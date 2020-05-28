@@ -62,4 +62,9 @@ class User extends Authenticatable
             return false;
         }
     }
+
+    public function relationships()
+    {
+        return $this->hasMany('App\Relationship');
+    }
 }

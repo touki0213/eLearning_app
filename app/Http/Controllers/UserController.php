@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use App\Activity;
+use App\Relationship;
 
 use Illuminate\Http\Request;
 
@@ -45,8 +47,16 @@ class UserController extends Controller
 
     public function follow($id)
     {
-        $followed_user = User::find($id);
-        Auth::user()->following()->attach($followed_user);
+        $auth = auth()->user();
+        $relationship = Relationship::create([
+            'follower_id' => $auth->id,
+            'followed_id' => $id
+        ]);
+
+        Activity::create([
+            'user_id' => $auth->id,
+            'relationship_id' => $relationship->id,
+        ]);
 
         return redirect()->back();
     }

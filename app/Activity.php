@@ -13,4 +13,18 @@ class Activity extends Model
     {
         return $this->belongsTo('App\User');
     }
+<<<<<<< Updated upstream
+=======
+
+    public function lesson()
+    {
+        return $this->belongsTo('App\Lesson');
+    }
+
+    public function relationship()
+    {
+        return $this->belongsTo('App\Relationship');
+    }
+
+>>>>>>> Stashed changes
 }
