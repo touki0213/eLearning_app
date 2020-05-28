@@ -8,6 +8,7 @@ use App\Category;
 use App\Lesson;
 use App\Choice;
 use App\Answer;
+use App\Activity;
 
 class LessonController extends Controller
 {
@@ -29,6 +30,12 @@ class LessonController extends Controller
             'category_id' => $category->id,
             'user_id' => $user->id
         ]);
+        
+        $auth = auth()->user();
+        Activity::create([
+            'user_id' => $auth->id,
+            'lesson_id' => $lesson->id
+        ]);
 
         return redirect()->route('lesson.questions', [$category, $lesson->id, $count]);
     }
@@ -47,7 +54,7 @@ class LessonController extends Controller
         $category = Category::find($id);
         $choice = Choice::find($choice);
         $lesson = Lesson::find($lesson);
-        $answer = Answer::create([
+        Answer::create([
             'choice_id' => $choice->id,
             'lesson_id' => $lesson->id
         ]);

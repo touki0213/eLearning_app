@@ -13,4 +13,15 @@ class Activity extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function lesson()
+    {
+        return $this->belongsTo('App\Lesson');
+    }
+
+    public function relationship()
+    {
+        return $this->belongsTo('App\Relationship');
+    }
+
 }

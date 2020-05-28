@@ -17,9 +17,9 @@ class CreateActivitiesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->unsignedInteger('relationship_id');
+            $table->unsignedInteger('relationship_id')->nullable();
             $table->foreign('relationship_id')->references('id')->on('relationships')->onDelete('cascade');
-            $table->unsignedInteger('lesson_id');
+            $table->unsignedInteger('lesson_id')->nullable();
             $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
             $table->timestamps();
         });
