@@ -48,9 +48,4 @@ Route::get('/lesson/{id}/questions/{lesson}/{count}/answer', 'LessonController@q
 Route::get('/lesson/{id}/questions/{lesson}/{count}/answer/{choice}', 'LessonController@answer')->name('lesson.answer');
 Route::get('/lesson/{id}/questions/{lesson}/result', 'LessonController@result')->name('lesson.result');
 
-<<<<<<< Updated upstream
-Route::get('/dashboard', 'DashboardController@activity')->name('activity');
-Route::get('/dashboard/{id}/store/{lesson}', 'DashboardController@activiry_store')->name('activity.store');
-=======
 Route::get('/activity', 'ActivityController@activity')->name('activity');
->>>>>>> Stashed changes

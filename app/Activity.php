@@ -13,8 +13,6 @@ class Activity extends Model
     {
         return $this->belongsTo('App\User');
     }
-<<<<<<< Updated upstream
-=======
 
     public function lesson()
     {
@@ -26,5 +24,4 @@ class Activity extends Model
         return $this->belongsTo('App\Relationship');
     }
 
->>>>>>> Stashed changes
 }
