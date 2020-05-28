@@ -22,7 +22,6 @@
                         <hr>
                         <img src="https://happysuzume.com/wp-content/uploads/2018/05/%E6%BF%83%E3%81%84%E3%82%B0%E3%83%AC%E3%83%BC%E4%BA%BA.png" style="float: left; width: 40px;" alt="">
                         <p>
-                            <!-- <span style="color: red;">{{ $activity->relationship()->first()->where('follower_id', $user->id)->first()->name }}</span> -->
                             <span style="color: red;">{{ $activity->relationship->follower->name }}</span>
                             followed
                             <span style="color: blue">{{ $activity->relationship->followed->name }}</span>. <br>
