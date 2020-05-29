@@ -47,5 +47,6 @@ Route::get('/lesson/{id}/questions/{count}', 'LessonController@lesson')->name('l
 Route::get('/lesson/{id}/questions/{lesson}/{count}/answer', 'LessonController@questions')->name('lesson.questions');
 Route::get('/lesson/{id}/questions/{lesson}/{count}/answer/{choice}', 'LessonController@answer')->name('lesson.answer');
 Route::get('/lesson/{id}/questions/{lesson}/result', 'LessonController@result')->name('lesson.result');
+Route::get('/lesson/{user}/list', 'LessonController@list')->name('lesson.list');
 
 Route::get('/activity', 'ActivityController@activity')->name('activity');

@@ -9,6 +9,7 @@ use App\Lesson;
 use App\Choice;
 use App\Answer;
 use App\Activity;
+use App\User;
 
 class LessonController extends Controller
 {
@@ -83,5 +84,13 @@ class LessonController extends Controller
         }
         
         return view('lesson.result', compact('lessons', 'correct'));
+    }
+
+    public function list($user)
+    {
+        $user = User::find($user);
+        $tried_lesson = $user->lessons()->orderBy('id', 'desc')->get();
+
+        return view('lesson.result_list', compact('tried_lesson'));
     }
 }
