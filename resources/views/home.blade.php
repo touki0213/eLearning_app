@@ -45,7 +45,7 @@
                         </div>
 
                         <div class="col-md-5" style="margin: 15px auto; text-align: center;">
-                            <a href="" style="text-align: center;">
+                            <a href="{{ route('lesson.list', ['id' => $user->id]) }}" style="text-align: center;">
                                 <img src="https://image.flaticon.com/icons/png/512/1344/1344380.png"
                                 style="width: 80px; text-align:center;" alt="">
                                 <h5>Lesson Result</h5>
