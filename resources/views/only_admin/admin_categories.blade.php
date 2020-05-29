@@ -8,6 +8,9 @@
                     <a href="{{ route('admin.category_create') }}">
                         <button type="button" class="btn btn-info">Create Questions</button>
                     </a>
+                    <a href="{{ route('home') }}">
+                        <button class="btn btn-secondary">Back Home</button>
+                    </a>
                 </h4>
 
                 <div class="row">

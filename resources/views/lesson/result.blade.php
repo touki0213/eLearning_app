@@ -4,7 +4,13 @@
 <div class="card">
     <table class="table">
         <h3 style="text-align: center">
-            {{ $correct }} / {{ $lessons->answers->count() }}
+            {{ $correct }} / {{ $lessons->answers->count() }} <br>
+            <a href="{{ route('lesson.categories') }}">
+                <button class="btn btn-secondary">Categories Page</button>
+            </a>
+            <a href="{{ route('home') }}">
+                <button class="btn btn-secondary">Back Home</button>
+            </a>
         </h3>
         <div class="card-body" style="width: 70%">
             <thead>

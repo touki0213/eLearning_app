@@ -2,7 +2,12 @@
 
 @section('content')
     <div class="card" style="margin: 0 10%;">
-        <h1 style="text-align: center;">What did who ？</h1>
+        <h1 style="text-align: center;">
+            What did who ？ <br>
+            <a href="{{ route('home') }}">
+                <button class="btn btn-secondary">Back Home</button>
+            </a>
+        </h1>
         
             @foreach($activities as $activity)
                 @if($activity->lesson_id == true)

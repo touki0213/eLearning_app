@@ -3,7 +3,12 @@
 @section('content')
 <div class="card" style="margin: 0 20%;">
   <div class="card-body">
-        <h4>All Members</h4><br>
+        <h4>
+            All Members
+            <a href="{{ route('home') }}" style="float: right;">
+                <button class="btn btn-secondary">Back Home</button>
+            </a>
+        </h4><br>
         <div class="list">
             @foreach($users as $user)
                 @if($user != auth()->user())

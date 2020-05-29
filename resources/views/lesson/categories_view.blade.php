@@ -3,7 +3,10 @@
 @section('content')
 <div class="container">
     <h2 class="card-title" style="text-align: center;">
-        Categories Page <br><br>
+        Categories Page <br>
+        <a href="{{ route('home') }}">
+            <button class="btn btn-secondary">Back Home</button>
+        </a>
     </h2>
 
     <div class="row">
