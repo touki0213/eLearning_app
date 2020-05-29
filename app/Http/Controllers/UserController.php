@@ -31,18 +31,20 @@ class UserController extends Controller
 
     public function following($id)
     {
+        $users = User::all();
         $user = User::find($id);
-        $following = $user->following()->get(); //Array of users, user foreach in blade
+        $following = $user->following()->get();
 
-        return view('user.following', compact('following', 'user'));
+        return view('user.following', compact('following', 'user', 'users'));
     }
 
     public function followers($id)
     {
+        $users = User::all();
         $user = User::find($id);
-        $followers = $user->followers()->get(); //Array of users, user foreach in blade
+        $followers = $user->followers()->get();
 
-        return view('user.followers', compact('followers', 'user'));
+        return view('user.followers', compact('followers', 'user', 'users'));
     }
 
     public function follow($id)

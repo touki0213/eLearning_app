@@ -17,7 +17,7 @@ class QuestionController extends Controller
         $category = Category::find($id);
         $questions = $category->question()->get();
         
-        return view('only_admin.admin_questions', compact('category', 'questions', 'choices'));
+        return view('only_admin.admin_questions', compact('category', 'questions'));
     }
 
     public function add_create($id)

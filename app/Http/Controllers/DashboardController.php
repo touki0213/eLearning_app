@@ -17,18 +17,4 @@ class DashboardController extends Controller
 
         return view('dashboard', compact('activities'));
     }
-
-    public function activity_store($id, $lesson)
-    {
-        $auth_user = auth()->user();
-        $users = User::find($id);
-        $lessons = Lesson::find($lesson);
-        Activity::create([
-            'user_id' => $auth_user->id,
-            'user_id' => $users->id,
-            'lesson_id' => $lessons->id
-        ]);
-
-        return redirect()->back();
-    }
 }

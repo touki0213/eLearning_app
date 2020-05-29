@@ -42,13 +42,11 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Category', 'lessons', 'user_id', 'category_id');
     }
 
-    //Users that current user is following
     public function following()
     {
         return $this->belongsToMany('App\User', 'relationships', 'follower_id', 'followed_id');
     }
 
-    //Users that follow user is followers
     public function followers()
     {
         return $this->belongsToMany('App\User', 'relationships', 'followed_id', 'follower_id');

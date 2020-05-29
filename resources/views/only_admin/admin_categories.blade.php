@@ -2,8 +2,6 @@
 
 @section('content')
 <div class="container">
-    <!-- <div class="card">
-        <div class="card-body"> -->
             @if($user->is_admin == '1')
                 <h4 class="card-title" style="text-align: center;">
                     Categories Page <br><br>
@@ -39,7 +37,5 @@
             @else
                 <h1 style="color: red; text-align: center;">Only Admin Page!!!!!!!</h1>
             @endif
-        <!-- </div>
-    </div> -->
 </div>
 @endsection

@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Category;
-use App\Question;
-use App\Choice;
 
 use Illuminate\Http\Request;
 

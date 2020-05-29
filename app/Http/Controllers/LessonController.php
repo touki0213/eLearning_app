@@ -73,6 +73,7 @@ class LessonController extends Controller
         return redirect()->route('lesson.questions', [$category, $lesson, $count, $choice]);
     }
 
+
     public function result($id, $lesson)
     {
         $lessons = Lesson::find($lesson);
@@ -89,8 +90,7 @@ class LessonController extends Controller
     public function list($user)
     {
         $user = User::find($user);
-        $tried_lesson = $user->lessons()->orderBy('id', 'desc')->get();
-
+        $tried_lesson = $user->lessons()->where('completed', 1)->orderBy('id', 'desc')->get();
         return view('lesson.result_list', compact('tried_lesson'));
     }
 }
