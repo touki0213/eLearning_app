@@ -49,7 +49,7 @@
                                 <div class="card">
                                     @if($activity->lesson_id == true)
                                         <h3>
-                                            {{ $user->name }} tried <span style="color: blue;">{{ $activity->lesson()->where('completed', 1)->first()->category->title }}</span> category.
+                                            {{ $user->name }} tried <span style="color: blue;">{{ $activity->lesson()->where('completed', 1)->first()->category()->first()->title }}</span> category.
                                         </h3>
                                     @elseif($activity->relationship_id == true)
                                         <h3>
