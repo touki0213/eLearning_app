@@ -44,7 +44,20 @@
             <div class="card">
                 <div class="card-body">
                         @if (auth()->user()->is_following($user->id) == true)
-                            <h4>Activity</h4>
+                        <h1>Activity</h1>
+                            @foreach($user->activities()->get() as $activity)
+                                <div class="card">
+                                    @if($activity->lesson_id == true)
+                                        <h3>
+                                            {{ $user->name }} tried <span style="color: blue;">{{ $activity->lesson()->where('completed', 1)->first()->category()->first()->title }}</span> category.
+                                        </h3>
+                                    @elseif($activity->relationship_id == true)
+                                        <h3>
+                                            {{ $user->name }} followd <span style="color: red;">{{ $activity->relationship->followed->name }}.</span>
+                                        </h3>
+                                    @endif
+                                </div>
+                            @endforeach
                         @else
                             <p style="font-size:20px;color: red;text-align: center;">You are not following this user!</p>
                         @endif
