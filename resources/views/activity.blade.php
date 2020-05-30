@@ -10,7 +10,7 @@
         </h1>
         
             @foreach($activities as $activity)
-                @if($activity->lesson_id == true)
+                @if($activity->lesson()->where('completed', 1)->first() == true)
                     <div class="card-body" style="margin: 0 5%;">
                         <hr>
                         <img src="https://happysuzume.com/wp-content/uploads/2018/05/%E6%BF%83%E3%81%84%E3%82%B0%E3%83%AC%E3%83%BC%E4%BA%BA.png" style="float: left; width: 40px;" alt="">
