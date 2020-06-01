@@ -44,7 +44,12 @@
             <div class="card">
                 <div class="card-body">
                         @if (auth()->user()->is_following($user->id) == true)
-                        <h1>Activity</h1>
+                        <h1>
+                            Activity
+                            <a href="{{ route('list') }}">
+                                <button class="btn btn-secondary" style="float: right">All Members</button>
+                            </a>
+                        </h1>
                             @foreach($user->activities()->get() as $activity)
                                 <div class="card">
                                     @if($activity->lesson_id == true)
@@ -59,7 +64,12 @@
                                 </div>
                             @endforeach
                         @else
-                            <p style="font-size:20px;color: red;text-align: center;">You are not following this user!</p>
+                            <p style="font-size:20px;color: red;text-align: center;">
+                                You are not following this user!
+                                <a href="{{ route('list') }}">
+                                    <button class="btn btn-secondary" style="float: right">All Members</button>
+                                </a>
+                            </p>
                         @endif
                 </div>
             </div>

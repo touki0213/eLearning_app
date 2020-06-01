@@ -15,9 +15,19 @@
                         <hr>
                         <img src="https://happysuzume.com/wp-content/uploads/2018/05/%E6%BF%83%E3%81%84%E3%82%B0%E3%83%AC%E3%83%BC%E4%BA%BA.png" style="float: left; width: 40px;" alt="">
                         <p style="font-size: 20px">
-                            <span style="color: red;">{{ $activity->lesson()->first()->user()->first()->name }}</span>
+                            @if($activity->user->id != Auth::user()->id)
+                                <a href="{{ route('show', ['id' => $activity->lesson->user->id]) }}">
+                                    <span style="color: red;">{{ $activity->lesson()->first()->user()->first()->name }}</span>
+                                </a>
+                            @else
+                                <a href="{{ route('home') }}">
+                                    <span style="color: red;">{{ $activity->lesson()->first()->user()->first()->name }}</span>
+                                </a>
+                            @endif
                             was tried
-                            <span style="color: blue;">{{ $activity->lesson()->first()->category()->first()->title }}</span>
+                            <a href="{{ route('lesson.result', ['id' => $activity->lesson->category->id, 'lesson' => $activity->lesson->id]) }}">
+                                <span style="color: blue;">{{ $activity->lesson()->first()->category()->first()->title }}</span>
+                            </a>
                             category. <br>
                             <span style="font-size: 14px">({{ $activity->lesson()->first()->category()->first()->updated_at }})</span>
                         </p>
@@ -27,9 +37,25 @@
                         <hr>
                         <img src="https://happysuzume.com/wp-content/uploads/2018/05/%E6%BF%83%E3%81%84%E3%82%B0%E3%83%AC%E3%83%BC%E4%BA%BA.png" style="float: left; width: 40px;" alt="">
                         <p style="font-size: 20px">
-                            <span style="color: red;">{{ $activity->relationship->follower->name }}</span>
+                            @if($activity->relationship->follower->id != Auth::user()->id)
+                                <a href="{{ route('show', ['id' => $activity->relationship->follower->id]) }}">
+                                    <span style="color: red;">{{ $activity->relationship->follower->name }}</span>
+                                </a>
+                            @else
+                                <a href="{{ route('home') }}">
+                                    <span style="color: red;">{{ $activity->relationship->follower->name }}</span>
+                                </a>
+                            @endif
                             followed
-                            <span style="color: blue">{{ $activity->relationship->followed->name }}</span>. <br>
+                            @if($activity->relationship->followed->id != Auth::user()->id)
+                                <a href="{{ route('show', ['id' => $activity->relationship->followed->id]) }}">
+                                    <span style="color: blue">{{ $activity->relationship->followed->name }}</span>. <br>
+                                </a>
+                            @else
+                                <a href="{{ route('home') }}">
+                                    <span style="color: blue">{{ $activity->relationship->followed->name }}</span>. <br>
+                                </a>
+                            @endif
                             <span style="font-size: 14px">({{ $activity->relationship()->first()->updated_at }})</span>
                         </p>
                     </div>
